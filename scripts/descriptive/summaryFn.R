@@ -17,11 +17,12 @@ frmt_msdB <- function(x){
 frmt_msdPM <- function(x){
   avg <- round(mean(x, na.rm = TRUE), 2)
   sdv <- round(sd(x, na.rm = TRUE), 2)
-  out <- paste(avg, " (U+00B1) ", sdv, sep = "")
+  out <- paste(avg, " 더하기빼기 ", sdv, sep = "")
   return(out)
 }
 
 ## 2. plus-minus 특수문자가 제대로 인쇄되지 않는다. 
 ## 특수문자 인쇄되는 방법은?
+# 유니코드 vs UTF-8?
 
 
