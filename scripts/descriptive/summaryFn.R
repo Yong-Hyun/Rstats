@@ -5,7 +5,7 @@
 ## one vector, one stat
 
 # 1. frmt_1: mean & (sd)
-frmt_msdB <- function(x){
+mean_sd_b <- function(x){
   avg <- round(mean(x, na.rm = TRUE), 2)
   sdv <- round(sd(x, na.rm = TRUE), 2)
   out <- paste(avg, " (", sdv, ")", sep = "")
@@ -14,10 +14,11 @@ frmt_msdB <- function(x){
 
 
 # 2. frmt_2: mean ± sd, # 소수점 두 자리
-frmt_msdPM <- function(x){
+mean_sd_s <- function(x){
   avg <- round(mean(x, na.rm = TRUE), 2)
   sdv <- round(sd(x, na.rm = TRUE), 2)
-  out <- paste(avg, " 더하기빼기 ", sdv, sep = "")
+  out <- paste(avg, "±", sdv, sep = "")
+  out <- iconv(out, "windows-1251", "UTF-8")
   return(out)
 }
 
@@ -26,3 +27,5 @@ frmt_msdPM <- function(x){
 # 유니코드 vs UTF-8?
 
 
+#   # encoding 정보 확인
+#   rvest::guess_encoding(dt1)
