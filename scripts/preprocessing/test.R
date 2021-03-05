@@ -17,5 +17,7 @@ frmt_msdPM <- function(x){
   return(out)
 }
 
+
+
 ## 2. 특수문자가 제대로 인쇄되지 않는다. 
 ## 특수문자 인쇄되는 방법은?
